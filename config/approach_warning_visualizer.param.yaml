@@ -1,0 +1,13 @@
+/**:
+  ros__parameters:
+    window_name: "Approach Warning Dashboard"
+    cell_size: 240
+    margin: 16
+    refresh_rate_hz: 20.0
+    eta_gap_green_threshold: 2.5
+
+    approach_ids: ["north", "east", "south", "west"]
+    approach_north_label: "북쪽"
+    approach_east_label: "동쪽"
+    approach_south_label: "남쪽"
+    approach_west_label: "서쪽"

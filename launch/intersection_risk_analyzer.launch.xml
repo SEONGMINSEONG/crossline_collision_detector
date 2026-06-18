@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="input_objects" default="/perception/object_recognition/objects"/>
+  <arg name="input_vector_map" default="/map/vector_map"/>
+  <arg name="param_file" default="$(find-pkg-share crossline_collision_detector)/config/intersection_risk_analyzer.param.yaml"/>
+  <arg name="approach_warnings_topic" default="/intersection_risk_analyzer/output/approach_warnings"/>
+  <arg name="use_approach_warning_visualizer" default="true"/>
+
+  <node pkg="crossline_collision_detector"
+        exec="intersection_risk_analyzer_exe"
+        name="intersection_risk_analyzer"
+        output="screen">
+    <remap from="~/input/objects" to="$(var input_objects)"/>
+    <remap from="~/input/vector_map" to="$(var input_vector_map)"/>
+    <remap from="~/output/approach_warnings" to="$(var approach_warnings_topic)"/>
+    <param from="$(var param_file)"/>
+  </node>
+
+  <include file="$(find-pkg-share crossline_collision_detector)/launch/approach_warning_visualizer.launch.xml"
+           if="$(var use_approach_warning_visualizer)">
+    <arg name="input_approach_warnings" value="$(var approach_warnings_topic)"/>
+  </include>
+</launch>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="input_objects" default="/perception/object_recognition/objects"/>
+  <arg name="input_vector_map" default="/map/vector_map"/>
+  <arg name="approach_warnings_topic" default="/intersection_risk_analyzer/output/approach_warnings"/>
+  <arg name="use_approach_warning_visualizer" default="true"/>
+
+  <include file="$(find-pkg-share crossline_collision_detector)/launch/intersection_risk_analyzer.launch.xml">
+    <arg name="input_objects" value="$(var input_objects)"/>
+    <arg name="input_vector_map" value="$(var input_vector_map)"/>
+    <arg name="approach_warnings_topic" value="$(var approach_warnings_topic)"/>
+    <arg name="use_approach_warning_visualizer" value="$(var use_approach_warning_visualizer)"/>
+  </include>
+
+  <include file="$(find-pkg-share crossline_collision_detector)/launch/warning_controller.launch.xml">
+    <arg name="input_approach_warnings" value="$(var approach_warnings_topic)"/>
+  </include>
+
+</launch>

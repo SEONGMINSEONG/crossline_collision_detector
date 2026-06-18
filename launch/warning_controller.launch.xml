@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="input_approach_warnings" default="/intersection_risk_analyzer/output/approach_warnings"/>
+  <arg name="param_file" default="$(find-pkg-share crossline_collision_detector)/config/warning_controller.param.yaml"/>
+
+  <node pkg="crossline_collision_detector"
+        exec="warning_controller_exe"
+        name="warning_controller"
+        output="screen">
+    <remap from="~/input/approach_warnings" to="$(var input_approach_warnings)"/>
+    <param from="$(var param_file)"/>
+  </node>
+</launch>

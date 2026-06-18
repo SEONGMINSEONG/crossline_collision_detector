@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+install/
+log/
+
+# ROS 2 and colcon outputs
+.colcon/
+*.bag
+*.db3
+
+# Local/editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Codex/local agent state
+.codex
+.agents/

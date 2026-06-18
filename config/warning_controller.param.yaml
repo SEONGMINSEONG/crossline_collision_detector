@@ -1,0 +1,13 @@
+/**:
+  ros__parameters:
+    board_ids: ["board_1", "board_2", "board_3", "board_4"]
+
+    approach_ids: ["north", "east", "south", "west"]
+    approach_north_label: "북쪽"
+    approach_east_label: "동쪽"
+    approach_south_label: "남쪽"
+    approach_west_label: "서쪽"
+    approach_north_board: "board_4"
+    approach_east_board: "board_3"
+    approach_south_board: "board_1"
+    approach_west_board: "board_2"

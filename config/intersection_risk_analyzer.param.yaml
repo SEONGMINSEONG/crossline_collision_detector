@@ -1,0 +1,35 @@
+/**:
+  ros__parameters:
+    eta_gap_threshold: 2.5
+    prediction_horizon_m: 25.0
+    path_overlap_distance_threshold: 2.5
+    min_vehicle_speed: 2.0
+    use_consecutive_validation: true
+    consecutive_count_threshold: 3
+    use_priority_lock: true
+    priority_unlock_count_threshold: 3
+    warning_hold_duration_sec: 3.0
+
+    conflict_zone_lanelet_ids: [328]
+    allowed_conflicting_approach_pairs: ["south:west", "east:south"]
+
+    stable_id_grid_size: 3.0
+    traffic_rule_location: de
+    traffic_rule_participant: vehicle
+
+    approach_ids: ["north", "east", "south", "west"]
+    approach_north_label: "북쪽"
+    approach_east_label: "동쪽"
+    approach_south_label: "남쪽"
+    approach_west_label: "서쪽"
+    approach_east_lanelet_ids: [96]
+    approach_south_lanelet_ids: [35]
+    approach_west_lanelet_ids: [21]
+    approach_north_maneuver: straight
+    approach_east_maneuver: straight
+    approach_south_maneuver: straight
+    approach_west_maneuver: straight
+    approach_north_right_of: ""
+    approach_east_right_of: south
+    approach_south_right_of: west
+    approach_west_right_of: ""
